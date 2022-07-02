@@ -43,7 +43,7 @@ exit(1);
  {
 memset(a, 0, sizeof(a));
 //Read messages from clients (without connection) into a[]; type "man 2 recvfrom" in terminal
-for details
+//for details
 n = recvfrom(sockfd, a, 50, 0, (struct sockaddr *)&cli_addr, (socklen_t *) &clilen);
 if(n>0)
 {
