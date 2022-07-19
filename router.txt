@@ -1,0 +1,36 @@
+##Router###
+
+enable
+configure terminal
+hostname R1
+banner motd #Unauthorized access to this device is prohibited!#
+
+interface g0/0/0
+description Connect to Subnet B
+ip address 192.168.10.129 255.255.255.192
+no shutdown 
+exit
+
+interface g0/0/1
+description Connect to Subnet A
+ip address 192.168.10.1 255.255.255.128
+no shutdown 
+exit
+
+enable secret NoOneShouldKnow
+service password-encryption
+
+
+line console 0
+password C@nsPassw!
+login
+exit
+
+line vty 0 15
+transport input ssh
+login local
+exit
+
+crypto key generate rsa
+1024
+exit

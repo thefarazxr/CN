@@ -54,6 +54,7 @@ time(&now); //get the present time in seconds - see 'man 2 time' on terminal
 present = *localtime(&now);
 //localtime breaks time_t variable 'now' into 'stuct tm' and returns the pointer to the newly
 //created structure. The structure is copied into 'present'\
+
 sprintf(a,"Time: %d-%d-%d %d:%d:%d\n", present.tm_year + 1900, present.tm_mon +
 1, present.tm_mday, present.tm_hour, present.tm_min, present.tm_sec);
 //The value from the structure 'present' is encoded as date and time

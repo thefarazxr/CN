@@ -45,4 +45,5 @@ int main()
  printf("\n Client received msg : %s",msg1);
  }
  close(sockfd);
+
 }

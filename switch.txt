@@ -1,0 +1,31 @@
+##SWITCH###
+
+enable
+configure terminal
+hostname S1
+banner motd #Unauthorized access to this device is prohibited!#
+
+interface vlan 1
+description Switch Subnet A
+ip address 192.168.10.2 255.255.255.128
+no shutdown 
+exit
+
+ip default-gateway 192.168.10.1
+
+enable secret NoOneShouldKnow
+service password-encryption
+
+line console 0
+password C@nsPassw!
+login
+exit
+
+line vty 0 15
+transport input ssh
+login local
+exit
+
+crypto key generate rsa
+1024
+exit
